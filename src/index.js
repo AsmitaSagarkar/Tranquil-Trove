@@ -1,8 +1,8 @@
 import ReactDom from "react-dom"
 import "./index.css";
 import AppLayout from "./component/applayout";
-import { createBrowserRouter } from "react-router-dom";
-
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "../src/component/home";
 
 const appRouter = createBrowserRouter(
     [
@@ -12,31 +12,12 @@ const appRouter = createBrowserRouter(
             children : [
                 {
                     path :"/",
-                    element :<home />
+                    element :<Home />
                 },
-                {
-                    path:"/women",
-                    element:<Women />
-                },
-                {
-                    path:"/women",
-                    element:<Men />
-                },{
-                    path:"/stores",
-                    element:<Stores />
-                },{
-                    path:"/signin",
-                    element:<Signin />
-                },{
-                    path:"/search",
-                    element:<Search />
-                },{
-                    path:"/cart",
-                    element:<cart />
-                },
+                
             ]
         }
     ]
 )
 const root = ReactDom.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(<RouterProvider router = {appRouter} />);
