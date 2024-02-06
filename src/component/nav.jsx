@@ -17,7 +17,7 @@ export default function Nav(){
        <img className="w-40 h-36" src={Logo} alt="Tranquil TROVE LOADING ......" />
        </div>
 
-       <div className="hidden lg:flex lg:items-center lg:justify-between lg:text-2xl text-colorYellow font-[poppins] font-semibold">
+       <div className="hidden lg:flex lg:items-center lg:justify-between lg:text-2xl text-pink-500 font-[poppins] font-semibold">
        <NavLink to ="/women">Women</NavLink>
        <NavLink to ="/mens">Men</NavLink>
        <NavLink to ="/kids">Kids</NavLink>
@@ -27,11 +27,11 @@ export default function Nav(){
        <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-14 mr-7 text-2xl text-colorBlack font-[poppins] font-semibold">
        <NavLink to ="/login" className="bg-colorBlack  px-4 py-1 rounded-xl ">Sign in</NavLink>
        <NavLink to ="/search"><SearchIcon /></NavLink>
-       <NavLink to ="/cart" className="relative"><ShoppingCartIcon /><div className = "w-2 h-7 text-[20px] bg-colorYellow text-colorBlack rounded-full flex justify-center absolute top-0 right-0">0</div></NavLink>
+       <NavLink to ="/cart" className="relative"><ShoppingCartIcon /><div className = "w-2 h-7 text-[20px] bg-pink-500 text-colorBlack rounded-full flex justify-center absolute top-0 right-0">0</div></NavLink>
        </div>
 
        <button className="lg:hidden flex items-center justify-end mr-5 z-50 text-2xl"> 
-       {isOpen ? <CancelIcon onClick = {toggle} className="text-colorYellow"  /> : <WidgetsIcon onClick ={toggle} />}
+       {isOpen ? <CancelIcon onClick = {toggle} className="text-pink-500 "  /> : <WidgetsIcon onClick ={toggle} />}
        
        </button>
 
