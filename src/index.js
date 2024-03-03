@@ -5,12 +5,16 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "../src/component/home";
 import Search from "../src/component/search"
 import Product from "../src/component/products"
-import Category from "../src/component/category"
 import Cart from "../src/component/cart"
 import Login from "../src/component/login"
-import Shop from "./component/shop";
+import SingleProduct from "./component/singleproduct"
+import Contact from "./component/contact";
+import About from "./component/about";
+import Error from "./component/error";
+
 
 const appRouter = createBrowserRouter(
+    
     [
 
         {
@@ -33,32 +37,34 @@ const appRouter = createBrowserRouter(
                     element :<Product />
                 },
                 {
-                    path :":productId",
-                    element :<Product />
-                },
-                {
                     path :"/login",
                     element :<Login />
                 },
                 {
-                    path :"/mens",
-                    element :<Category category = "mens" />
+                    path :"/home",
+                    element :<Home />
                 },
                 {
-                    path :"/women",
-                    element :<Category category = "women" />
+                    path :"/about",
+                    element :<About />
                 },
                 {
-                    path :"/kids",
-                    element :<Category category = "kids" />
+                    path :"/contact",
+                    element :<Contact />
                 },
                 {
-                    path :"/shop",
-                    element :<Shop />
+                    path :"/product",
+                    element :<Product />
                 },
+               
+                {
+                    path :"/singleproduct/:id",
+                    element :<SingleProduct />
+                },
+               
                 
-                
-            ]
+            ],
+            errorElement :<Error />
         }
     ]
 )

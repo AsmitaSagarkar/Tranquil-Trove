@@ -18,10 +18,10 @@ export default function Nav(){
        </div>
 
        <div className="hidden lg:flex lg:items-center lg:justify-between lg:text-2xl text-pink-500 font-[poppins] font-semibold">
-       <NavLink to ="/women">Women</NavLink>
-       <NavLink to ="/mens">Men</NavLink>
-       <NavLink to ="/kids">Kids</NavLink>
-       <NavLink to ="/shop">Shop</NavLink>
+       <NavLink to ="/home">Home</NavLink>
+       <NavLink to ="/about">About</NavLink>
+       <NavLink to ="/contact">Contact</NavLink>
+       <NavLink to ="/product">Product</NavLink>
        </div>
 
        <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-14 mr-7 text-2xl text-colorBlack font-[poppins] font-semibold">
@@ -40,10 +40,10 @@ export default function Nav(){
         isOpen&& (
 
             <div className="h-full justify-center items-center flex flex-col gap-6 text-2xl font-[poppins]  bg-colorBlack absolute w-full text-colorYellow font-bold">
-            <NavLink to ="/women">Women</NavLink>
-            <NavLink to ="/mens">Men</NavLink>
-            <NavLink to ="/kids">Kids</NavLink>
-            <NavLink to ="/shop">Shops</NavLink>
+            <NavLink to ="/home">Home</NavLink>
+            <NavLink to ="/about">About</NavLink>
+            <NavLink to ="/contact">Contact</NavLink>
+            <NavLink to ="/product">Product</NavLink>
             <NavLink to ="/login" className="bg-colorYellow text-colorBlack  px-4 py-1 rounded-xl ">Sign in</NavLink>
             <NavLink to ="/search"><SearchIcon /></NavLink>
             <NavLink to ="/cart"><ShoppingCartIcon /></NavLink>
