@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "./assets/family.jpg"
+import {NavLink} from "react-router-dom"
 
 const home = () => {
   return (
@@ -9,7 +10,7 @@ const home = () => {
          <h1 className='text-5xl font-extrabold font-mono'><span className='text-gray-700'>Welcome to</span><span className='text-emerald-700'> Tranquil-Trove</span></h1>
          <p className='text-gray-400 text-xl '>Indulge in our curated collections crafted to soothe your senses and elevate your everyday moments.Discover curated collections designed to bring tranquility to your life, one click at a time.</p>
 
-         <button>Let's Explore</button>
+         <button><NavLink to="/product">Let's Explore</NavLink></button>
     </div>
 
     <div className='flex justify-center items-center'>
