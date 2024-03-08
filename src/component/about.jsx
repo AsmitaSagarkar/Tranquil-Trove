@@ -1,9 +1,12 @@
-import React from 'react'
 
-const about = () => {
+import { useGlobalContext } from './context/productcontext';
+
+const About = () => {
+  const {myName} = useGlobalContext();
+
   return (
-    <div>about</div>
+    <div>{myName}</div>
   )
 }
 
-export default about
+export default About;

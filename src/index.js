@@ -11,7 +11,7 @@ import SingleProduct from "./component/singleproduct"
 import Contact from "./component/contact";
 import About from "./component/about";
 import Error from "./component/error";
-
+import { AppProvider } from "./component/context/productcontext";
 
 const appRouter = createBrowserRouter(
     
@@ -69,4 +69,8 @@ const appRouter = createBrowserRouter(
     ]
 )
 const root = ReactDom.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router = {appRouter} />);
+root.render(
+    <AppProvider>
+    <RouterProvider router = {appRouter} />
+    </AppProvider>
+    );
