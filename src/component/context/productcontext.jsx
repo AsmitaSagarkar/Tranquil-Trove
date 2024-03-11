@@ -2,7 +2,7 @@
 //Step to create a context : create a context,present a provider,present a consumer using useContext hook
 import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import Axios from 'axios';
-
+import reducer from '../reducer/productReducer';
 const AppContext = createContext(); 
 //console.log(AppContext);
 
@@ -21,16 +21,25 @@ const AppProvider = ({children}) =>{
     const [state,dispatch] = useReducer(reducer,initialState);
 
     const getApi = async (url) =>{
-        const res = await Axios.get(url);
-        const product = await res.data;
-        console.log(product);
+
+        dispatch({type:"LOADING"});
+
+        try {
+            const res = await Axios.get(url);
+            const product = await res.data;
+            console.log(product);
+            dispatch({type:"SET_PRODUCT",payload:product});
+        } catch (error) {
+            dispatch({type:"ERROR"});
+            
+        }
     
     
     }
     useEffect(()=>{
         getApi(API);
     },[]);
-    return <AppContext.Provider value={{myName : "asmita"}}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
 }
 
 //create a global custom hook 
