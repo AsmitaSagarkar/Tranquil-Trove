@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "./assets/family.jpg"
 import {NavLink} from "react-router-dom"
+import featuresProduct from './featuresProduct'
 
 const home = () => {
   return (
@@ -18,7 +19,7 @@ const home = () => {
     </div>
 
 
-    
+    <featuresProduct/>
     </div>
   )
 }
