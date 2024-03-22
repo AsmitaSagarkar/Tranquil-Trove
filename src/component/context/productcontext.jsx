@@ -27,7 +27,7 @@ const AppProvider = ({children}) =>{
         try {
             const res = await Axios.get(url);
             const product = await res.data;
-            console.log(product);
+            // console.log(product);
             dispatch({type:"SET_PRODUCT",payload:product});
         } catch (error) {
             dispatch({type:"ERROR"});
@@ -47,4 +47,4 @@ const AppProvider = ({children}) =>{
 const useGlobalContext = () =>{
     return useContext(AppContext);
 }
-export {useGlobalContext,AppProvider};
+export {useGlobalContext,AppProvider,AppContext};

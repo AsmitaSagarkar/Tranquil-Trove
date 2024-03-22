@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useGlobalContext } from './context/productcontext';
 
-const featuresProduct = () => {
+const FeaturesProduct = () => {
+    const {isLoading, pRating} = useGlobalContext();
+    console.log(pRating);
   return (
     <div>featuresProduct</div>
   )
 }
 
-export default featuresProduct
+export default FeaturesProduct
