@@ -1,4 +1,5 @@
-const productReducer = (state,action) => {
+
+const productReducer = (state,action) => { //this is the reducer function that we have initialised in productcontext
   switch(action.type){
     case "LOADING":
       return {...state,isLoading:true}

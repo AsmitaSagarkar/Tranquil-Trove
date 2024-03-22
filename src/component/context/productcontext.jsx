@@ -3,7 +3,8 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import Axios from 'axios';
 import reducer from '../reducer/productReducer';
-const AppContext = createContext(); 
+
+const AppContext = createContext(); //creating a context
 //console.log(AppContext);
 
 const API = "https://dummyjson.com/products";
@@ -20,7 +21,7 @@ const AppProvider = ({children}) =>{
 
     const [state,dispatch] = useReducer(reducer,initialState);
 
-    const getApi = async (url) =>{
+    const getApi = async (url) =>{ //this is the function that we have to call to get the data from the api
 
         dispatch({type:"LOADING"});
 
@@ -29,6 +30,7 @@ const AppProvider = ({children}) =>{
             const product = await res.data;
             // console.log(product);
             dispatch({type:"SET_PRODUCT",payload:product});
+           
         } catch (error) {
             dispatch({type:"ERROR"});
             
