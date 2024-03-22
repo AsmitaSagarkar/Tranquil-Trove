@@ -15,7 +15,9 @@ const initialState = {
     isLoading :false,
     isError : false,
     product : [],
-    pRating : []
+    pRating : [],
+    isSingleLoading : false,
+    singleProduct : {},
 }
 const AppProvider = ({children}) =>{
 
@@ -41,7 +43,21 @@ const AppProvider = ({children}) =>{
     useEffect(()=>{
         getApi(API);
     },[]);
-    return <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
+
+    const getSingleProduct = async (url) =>{
+        dispatch({type:"SINGLE_LOADING"});
+
+        try {
+            const res = await Axios.get(url);
+            const singleProduct = await res.data;
+            dispatch({type:"SET_SINGLE_PRODUCT" , payload:singleProduct});
+            
+        } catch (error) {
+            dispatch({type:"SINGLE_ERROR"});
+            
+        }
+    }
+    return <AppContext.Provider value={{...state , getSingleProduct}}>{children}</AppContext.Provider>
 }
 
 //create a global custom hook 
