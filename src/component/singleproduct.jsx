@@ -7,6 +7,7 @@ import NumberFormat from './helpers/numberFormat';
 import { FaTruck } from "react-icons/fa";
 import { TbReplace } from "react-icons/tb";
 import { MdOutlineSecurity } from "react-icons/md";
+import Star from "./star"
 
 const Singleproduct = () => {
   const {id} = useParams();
@@ -31,7 +32,7 @@ const Singleproduct = () => {
     <div><Pagenavigation title={title} /></div>
     <Myimages images={images} />
     <h1>{title}</h1>
-    <h2>{rating}</h2>
+    <h2><Star star = {rating} /></h2>
     <h3>{brand}</h3>
     <h1>deal of the day</h1>
     <div>
