@@ -7,12 +7,15 @@ import NumberFormat from './helpers/numberFormat';
 import { FaTruck } from "react-icons/fa";
 import { TbReplace } from "react-icons/tb";
 import { MdOutlineSecurity } from "react-icons/md";
+
 const Singleproduct = () => {
   const {id} = useParams();
   const {getSingleProduct, isSingleLoading,singleProduct} = useGlobalContext();
   console.log(id); 
 
-  const {id:number , title,description,price,brand,category,rating,images,stock} = singleProduct;
+  console.log(getSingleProduct);
+  const {id:number , title,description,price,brand,category,images,rating,stock} = singleProduct;
+  console.log(singleProduct);
 
   const API = "https://dummyjson.com/products/";
   useEffect(()=>{

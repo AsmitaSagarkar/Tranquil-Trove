@@ -1,11 +1,12 @@
 import React from 'react'
 
 const Myimages = ({images}) => {
+  console.log(images);
+
   return (
     <div>{
-        images.map((image)=>{
-            return <img src={image} key={image}/>
-        
+        images.map((image,ind)=>{
+            return <>heyy</>    
         })
     }</div>
   )
